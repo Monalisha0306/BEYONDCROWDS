@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | BEYONDCROWDS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ================== */
+    /* 🌍 Global Styles   */
+    /* ================== */
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background: url("images/bg.png") no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    /* ================== */
+    /* 🌟 Header          */
+    /* ================== */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .logo { width: 140px; }
+    h1 {
+      font-family: Garamond, serif;
+      font-style: italic;
+      font-size: 2.5rem;
+      color: #f4a261;
+      margin: 10px 0 5px;
+    }
+    .tagline {
+      font-size: 18px;
+      color: #a8dadc;
+    }
+
+    /* ================== */
+    /* 🧭 Navigation      */
+    /* ================== */
+    nav {
+      background: rgba(17, 27, 59, 0.8);
+      padding: 12px 0;
+      border-radius: 8px;
+      margin: 0 auto 25px;
+      width: 92%;
+      max-width: 1100px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+    nav ul li a {
+      color: #eaeaea;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #f4a261;
+    }
+
+    /* ================== */
+    /* 👤 Profile Section */
+    /* ================== */
+    .featured {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .featured h2 {
+      color: #f4a261;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+    .profile-card {
+      text-align: center;
+    }
+    .profile-pic {
+      width: 130px;
+      border-radius: 50%;
+      border: 3px solid #f4a261;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+    .profile-card h3 {
+      color: #f4a261;
+      margin-bottom: 5px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      background: #f4a261;
+      color: #1b263b;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s;
+      border: none;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #e76f51;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ================== */
+    /* 🧾 Booking Table   */
+    /* ================== */
+    .profile-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .profile-table th, .profile-table td {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 10px;
+    }
+    .profile-table th {
+      background: rgba(244,162,97,0.3);
+      color: #fff;
+    }
+    .profile-table td {
+      background: rgba(0,0,0,0.3);
+    }
+
+    footer {
+      background: rgba(17, 27, 59, 0.9);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px 8px 0 0;
+      color: #eaeaea;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="images/beyondlogo.png" alt="BEYONDCROWDS Logo" class="logo">
+    <h1>BEYONDCROWDS</h1>
+    <p class="tagline">Explore Beyond, Stay Reliable</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="flights.html"><i class="fas fa-plane"></i> Flights</a></li>
+      <li><a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+      <li><a href="packages.html"><i class="fas fa-hotel"></i> Packages</a></li>
+      <li><a href="booking.html"><i class="fas fa-clipboard-list"></i> Bookings</a></li>
+      <li><a href="visa-currency.html"><i class="fas fa-passport"></i> Visa & Currency</a></li>
+      <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment</a></li>
+      <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+    </ul>
+  </nav>
+
+  <section class="featured">
+    <h2>👤 User Profile</h2>
+    <div class="profile-card">
+      <img src="images/profile.png" alt="User Photo" class="profile-pic" id="profilePic">
+      <h3 id="profileName">Traveler Name</h3>
+      <p id="profileEmail">Email: traveler@example.com</p>
+      <p id="profileCountry">Country: India</p>
+      <button class="btn" id="editBtn">Edit Profile</button>
+      <button class="btn" id="changePicBtn">Change Photo</button>
+      <input type="file" id="fileInput" accept="image/*" style="display:none;">
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>🧾 Booking History</h2>
+    <table class="profile-table" id="bookingTable">
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Spiti Valley</td>
+          <td>12–18 July 2025</td>
+          <td>Confirmed</td>
+        </tr>
+        <tr>
+          <td>Siargao, Philippines</td>
+          <td>02–08 Sept 2025</td>
+          <td>Pending</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn" id="addBookingBtn">+ Add Booking</button>
+  </section>
+
+  <footer>
+    <p>© 2025 BEYONDCROWDS | “Explore Beyond, Stay Reliable”</p>
+  </footer>
+
+  <script>
+    // Load saved info
+    window.addEventListener("load", () => {
+      if (localStorage.getItem("name")) {
+        document.getElementById("profileName").textContent = localStorage.getItem("name");
+        document.getElementById("profileEmail").textContent = "Email: " + localStorage.getItem("email");
+        document.getElementById("profileCountry").textContent = "Country: " + localStorage.getItem("country");
+      }
+      if (localStorage.getItem("profilePic")) {
+        document.getElementById("profilePic").src = localStorage.getItem("profilePic");
+      }
+    });
+
+    // Edit profile
+    document.getElementById("editBtn").addEventListener("click", () => {
+      const name = prompt("Enter your name:", localStorage.getItem("name") || "Traveler Name");
+      const email = prompt("Enter your email:", localStorage.getItem("email") || "traveler@example.com");
+      const country = prompt("Enter your country:", localStorage.getItem("country") || "India");
+      if (name && email && country) {
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("country", country);
+        document.getElementById("profileName").textContent = name;
+        document.getElementById("profileEmail").textContent = "Email: " + email;
+        document.getElementById("profileCountry").textContent = "Country: " + country;
+      }
+    });
+
+    // Change photo
+    const fileInput = document.getElementById("fileInput");
+    const profilePic = document.getElementById("profilePic");
+    document.getElementById("changePicBtn").addEventListener("click", () => fileInput.click());
+    fileInput.addEventListener("change", function () {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        profilePic.src = e.target.result;
+        localStorage.setItem("profilePic", e.target.result);
+      };
+      reader.readAsDataURL(this.files[0]);
+    });
+
+    // Add booking
+    document.getElementById("addBookingBtn").addEventListener("click", () => {
+      const dest = prompt("Enter destination:");
+      const date = prompt("Enter travel date:");
+      const status = prompt("Enter booking status (Confirmed/Pending):");
+      if (dest && date && status) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${dest}</td><td>${date}</td><td>${status}</td>`;
+        document.querySelector("#bookingTable tbody").appendChild(row);
+      }
+    });
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

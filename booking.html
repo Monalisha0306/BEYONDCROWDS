@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Your Stay | BEYONDCROWDS</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Background same as index */
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background: url("images/bg.png") no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6); /* dark overlay */
+      z-index: -1;
+    }
+
+    /* Booking Section */
+    .booking-hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .booking-hero h2 {
+      font-size: 2rem;
+      color: #ffb066;
+      margin-bottom: 10px;
+      font-family: Georgia, serif;
+      font-style: italic;
+    }
+
+    .booking-hero p {
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .filters {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .filters label {
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .filters select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    /* Hotel Grid */
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 20px 6%;
+    }
+
+    .hotel-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      text-align: center;
+      transition: transform 0.2s;
+      position: relative;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hotel-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .hotel-card h3 {
+      margin: 12px 0 6px;
+      color: #ffd18a;
+    }
+
+    .hotel-card p {
+      font-size: 0.95rem;
+      padding: 0 12px;
+    }
+
+    .hotel-meta {
+      margin: 10px 0;
+      color: #ffb066;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: #ff8a3d;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 12px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff6a00;
+    }
+
+    /* Booking form popup */
+    .popup-form {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+      z-index: 1000;
+      width: 90%;
+      max-width: 400px;
+      color: #fff;
+    }
+
+    .popup-form h3 {
+      margin-bottom: 15px;
+      color: #ffb066;
+    }
+
+    .popup-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .popup-form input, .popup-form select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 12px;
+    }
+
+    .popup-form button {
+      background: #ff8a3d;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .popup-form button:hover {
+      background: #ff6a00;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="images/beyondlogo.png" alt="BEYONDCROWDS Logo" class="logo" />
+    <h1>BEYONDCROWDS</h1>
+    <p class="tagline">Explore Beyond, Stay Reliable</p>
+  </header>
+
+  <!-- Nav -->
+  <nav class="icon-nav">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="flights.html"><i class="fas fa-plane"></i> Flights</a></li>
+      <li><a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+      <li><a href="packages.html"><i class="fas fa-box-open"></i> Packages</a></li>
+      <li><a href="booking.html" class="active"><i class="fas fa-clipboard-list"></i> Bookings</a></li>
+      <li><a href="visa-currency.html"><i class="fas fa-passport"></i> Visa & Currency</a></li>
+      <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment</a></li>
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Booking Hero -->
+  <section class="booking-hero">
+    <h2>Book Your Stay</h2>
+    <p>Find the perfect hotel that fits your budget and comfort.</p>
+  </section>
+
+  <!-- Filters -->
+  <div class="filters">
+    <label for="budget">Budget:</label>
+    <select id="budget">
+      <option value="all">All</option>
+      <option value="low">Below ₹5,000</option>
+      <option value="mid">₹5,000 - ₹15,000</option>
+      <option value="high">Above ₹15,000</option>
+    </select>
+
+    <label for="rating">Rating:</label>
+    <select id="rating">
+      <option value="all">All</option>
+      <option value="4">4★ & above</option>
+      <option value="4.5">4.5★ & above</option>
+    </select>
+  </div>
+
+  <!-- Hotels -->
+  <section class="hotel-grid" id="hotel-list">
+    <!-- JS will insert hotels here -->
+  </section>
+
+  <!-- Popup booking form -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup-form" id="bookingForm">
+    <span class="close-btn" onclick="closeForm()">&times;</span>
+    <h3>Complete Your Booking</h3>
+    <form action="payment.html" method="get">
+      <input type="hidden" id="hotelName" name="hotel">
+
+      <label for="adults">Adults:</label>
+      <select id="adults" name="adults">
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+
+      <label for="children">Children:</label>
+      <select id="children" name="children">
+        <option>0</option><option>1</option><option>2</option><option>3</option>
+      </select>
+
+      <label for="rooms">Rooms:</label>
+      <select id="rooms" name="rooms">
+        <option>1</option><option>2</option><option>3</option>
+      </select>
+
+      <label for="checkin">Check-in:</label>
+      <input type="date" id="checkin" name="checkin" required>
+
+      <label for="checkout">Check-out:</label>
+      <input type="date" id="checkout" name="checkout" required>
+
+      <button type="submit">Proceed to Payment</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 BEYONDCROWDS | “Explore Beyond, Stay Reliable”</p>
+  </footer>
+
+  <script>
+  const hotels = [
+    // --- Asia ---
+    {place: "ladakh", name: "Ladakh Retreat", img: "images/ladakhhotel.jpg", desc: "Scenic stay with mountain views.", rating: 4.7, price: 12000},
+    {place: "ladakh", name: "Himalayan Lodge", img: "images/lodge.jpg", desc: "Warm hospitality in Leh.", rating: 4.5, price: 8000},
+    {place: "spiti", name: "Spiti Eco Lodge", img: "images/spitieco.jpg", desc: "Rustic experience close to nature.", rating: 4.6, price: 6000},
+    {place: "spiti", name: "Valley View Homestay", img: "images/homestay.jpg", desc: "Affordable stay with local family.", rating: 4.4, price: 3500},
+    {place: "siargao", name: "Beachside Villa", img: "images/villa.jpg", desc: "Luxury villa near surfing spots.", rating: 4.8, price: 15000},
+    {place: "gobi", name: "Gobi Desert Yurt Camp", img: "images/camp.jpg", desc: "Traditional yurts with desert views.", rating: 4.5, price: 14000},
+    {place: "socotra", name: "Socotra Eco Camp", img: "images/socotraeco.jpg", desc: "Unique island experience under the stars.", rating: 4.6, price: 16000},
+    {place: "sabah", name: "Borneo Rainforest Lodge", img: "images/rain.jpg", desc: "Eco-lodge in dense rainforest.", rating: 4.7, price: 17000},
+    {place: "svaneti", name: "Svaneti Mountain Lodge", img: "images/mountain.jpg", desc: "Rustic cabins amidst Caucasus peaks.", rating: 4.5, price: 11000},
+
+    // --- Europe ---
+    {place: "faroe", name: "Faroe Cliffside Inn", img: "images/inn.jpg", desc: "Dramatic views of Atlantic cliffs.", rating: 4.8, price: 20000},
+    {place: "lofoten", name: "Lofoten Arctic Cabins", img: "images/cabins.jpg", desc: "Cozy cabins by fjords.", rating: 4.7, price: 19000},
+    {place: "azores", name: "Azores Boutique Stay", img: "images/stay.jpg", desc: "Charming island boutique hotel.", rating: 4.6, price: 15000},
+    {place: "transylvania", name: "Brasov Castle View Hotel", img: "images/castle.jpg", desc: "Stay near medieval castles.", rating: 4.5, price: 10000},
+    {place: "albania", name: "Valbona Guesthouse", img: "images/guest.jpg", desc: "Mountain stay in the Albanian Alps.", rating: 4.4, price: 8500},
+    {place: "skye", name: "Isle of Skye Inn", img: "images/isle1.jpg", desc: "Cottages with loch views.", rating: 4.7, price: 18000},
+    {place: "picos", name: "Picos de Europa Lodge", img: "images/pico.jpg", desc: "Mountain base for hikers.", rating: 4.6, price: 13000},
+    {place: "lapland", name: "Lapland Glass Igloo", img: "images/igloo.jpg", desc: "Watch the northern lights.", rating: 4.9, price: 25000},
+    {place: "kotor", name: "Kotor Bay Hotel", img: "images/bay.jpg", desc: "Luxury stay overlooking the bay.", rating: 4.8, price: 16000}
+  ];
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const packageName = urlParams.get("package");
+
+  function renderHotels() {
+    const budget = document.getElementById("budget").value;
+    const rating = parseFloat(document.getElementById("rating").value) || 0;
+    const container = document.getElementById("hotel-list");
+    container.innerHTML = "";
+
+    const filtered = hotels.filter(hotel => {
+      if (packageName && hotel.place !== packageName) return false;
+      if (budget === "low" && hotel.price >= 5000) return false;
+      if (budget === "mid" && (hotel.price < 5000 || hotel.price > 15000)) return false;
+      if (budget === "high" && hotel.price <= 15000) return false;
+      if (rating && hotel.rating < rating) return false;
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = "<p>No hotels available for this location.</p>";
+      return;
+    }
+
+    filtered.forEach(hotel => {
+      const div = document.createElement("div");
+      div.className = "hotel-card";
+      div.innerHTML = `
+        <img src="${hotel.img}" alt="${hotel.name}">
+        <h3>${hotel.name}</h3>
+        <p>${hotel.desc}</p>
+        <div class="hotel-meta"><i class="fas fa-star"></i> ${hotel.rating} • ₹${hotel.price.toLocaleString()}</div>
+        <a class="btn" href="#" onclick="openForm('${hotel.name}')">Book Now</a>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function openForm(hotelName) {
+    document.getElementById("hotelName").value = hotelName;
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("bookingForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("bookingForm").style.display = "none";
+  }
+
+  document.getElementById("budget").addEventListener("change", renderHotels);
+  document.getElementById("rating").addEventListener("change", renderHotels);
+  renderHotels();
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

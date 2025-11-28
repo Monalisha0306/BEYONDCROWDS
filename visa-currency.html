@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visa & Currency | BEYONDCROWDS</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="images/beyondlogo.png" alt="BEYONDCROWDS Logo" class="logo">
+    <h1>BEYONDCROWDS</h1>
+    <p class="tagline">Explore Beyond, Stay Reliable</p>
+  </header>
+
+  <nav class="icon-nav">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="flights.html"><i class="fas fa-plane"></i> Flights</a></li>
+      <li><a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+      <li><a href="packages.html"><i class="fas fa-hotel"></i> Packages</a></li>
+      <li><a href="booking.html"><i class="fas fa-clipboard-list"></i> Bookings</a></li>
+      <li><a href="visa-currency.html" class="active"><i class="fas fa-passport"></i> Visa & Currency</a></li>
+      <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment</a></li>
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+    </ul>
+  </nav>
+
+  <section class="featured">
+    <h2>🛃 Visa Information</h2>
+    <p>Find visa requirements for popular underrated destinations before planning your journey.</p>
+    <ul>
+      <li><strong>India → Thailand:</strong> Visa on arrival (up to 15 days)</li>
+      <li><strong>India → Indonesia:</strong> Free visa for 30 days</li>
+      <li><strong>India → Vietnam:</strong> e-Visa available online</li>
+      <li><strong>India → Philippines:</strong> Visa-free for 14 days</li>
+    </ul>
+  </section>
+
+  <section class="featured">
+    <h2>💱 Currency Converter</h2>
+    <form class="booking-form">
+      <label>Amount (INR)</label>
+      <input type="number" id="inr" placeholder="Enter amount">
+
+      <label>Convert to:</label>
+      <select id="currency">
+        <option value="USD">USD (US Dollar)</option>
+        <option value="EUR">EUR (Euro)</option>
+        <option value="PHP">PHP (Philippine Peso)</option>
+        <option value="THB">THB (Thai Baht)</option>
+      </select>
+
+      <button type="button" class="btn" onclick="convertCurrency()">Convert</button>
+    </form>
+
+    <p id="result" style="text-align:center; margin-top:10px; font-weight:bold;"></p>
+  </section>
+
+  <script>
+    function convertCurrency() {
+      const inr = parseFloat(document.getElementById("inr").value);
+      const currency = document.getElementById("currency").value;
+      let rate = 0;
+      if (currency === "USD") rate = 0.012;
+      else if (currency === "EUR") rate = 0.011;
+      else if (currency === "PHP") rate = 0.69;
+      else if (currency === "THB") rate = 0.44;
+      const converted = inr * rate;
+      document.getElementById("result").innerText = `≈ ${converted.toFixed(2)} ${currency}`;
+    }
+  </script>
+
+  <footer>
+    <p>© 2025 BEYONDCROWDS | “Explore Beyond, Stay Reliable”</p>
+  </footer>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Packages | BEYONDCROWDS</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <style>
+    .discover-hero {
+      padding: 36px 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .discover-card {
+      width: 100%;
+      max-width: 1100px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+      color: #fff;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+    }
+    .discover-card .card-inner {
+      position: relative;
+      z-index: 2;
+      padding: 48px;
+      width: 100%;
+    }
+    .discover-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(3,8,14,0.65), rgba(3,8,14,0.35));
+      z-index: 1;
+    }
+    .discover-card h2 {
+      font-size: 2.4rem;
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .discover-card h2 i { color: #ffd18a; }
+    .discover-card p { font-size: 1.05rem; margin: 0 0 18px; }
+    .discover-card .btn {
+      background: #ff8a3d;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .packages-section { padding: 42px 6%; }
+    .packages-section h2 {
+      margin: 6px 0 18px;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card .meta {
+      margin-top: 10px;
+      color: #ffdca3;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/beyondlogo.png" alt="BEYONDCROWDS Logo" class="logo" />
+    <h1>BEYONDCROWDS</h1>
+    <p class="tagline">Explore Beyond, Stay Reliable</p>
+  </header>
+
+  <nav class="icon-nav">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="flights.html"><i class="fas fa-plane"></i> Flights</a></li>
+      <li><a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+      <li><a href="packages.html" class="active"><i class="fas fa-box-open"></i> Packages</a></li>
+      <li><a href="booking.html"><i class="fas fa-clipboard-list"></i> Bookings</a></li>
+      <li><a href="visa-currency.html"><i class="fas fa-passport"></i> Visa & Currency</a></li>
+      <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment</a></li>
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Discover -->
+  <section class="discover-hero">
+    <div class="discover-card" style="background-image: url('images/packages-discover.jpg');">
+      <div class="card-inner">
+        <h2><i class="fas fa-globe-americas"></i> Discover Special Packages</h2>
+        <p>Handpicked underrated destinations where transport is tough and stays are costly — but the adventure is priceless.</p>
+        <a class="btn" href="#asia">Explore Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Asia -->
+  <section class="packages-section" id="asia">
+    <h2><i class="fas fa-globe-asia"></i> 🌏 Asia Packages</h2>
+    <div class="packages-grid">
+      <div class="card"><img src="images/ladakh.jpg"><h3>Ladakh, India</h3><p>High-altitude, limited connectivity, expensive during peak.</p><div class="meta"><i class="fas fa-star"></i> 4.8 • ₹74,000</div><a class="btn" href="booking.html?package=ladakh">Book Now</a></div>
+      <div class="card"><img src="images/spiti.jpg"><h3>Spiti Valley, India</h3><p>Remote, rough roads, few stays so prices spike.</p><div class="meta"><i class="fas fa-star"></i> 4.7 • ₹90,000</div><a class="btn" href="booking.html?package=spiti">Book Now</a></div>
+      <div class="card"><img src="images/siargao.jpg"><h3>Siargao, Philippines</h3><p>Connecting flights, boutique stays cost more.</p><div class="meta"><i class="fas fa-star"></i> 4.9 • ₹82,000</div><a class="btn" href="booking.html?package=siargao">Book Now</a></div>
+      <div class="card"><img src="images/luang.jpg"><h3>Luang Prabang, Laos</h3><p>UNESCO town, limited quality hotels.</p><div class="meta"><i class="fas fa-star"></i> 4.6 • ₹70,000</div><a class="btn" href="booking.html?package=luang">Book Now</a></div>
+      <div class="card"><img src="images/gobi.jpg"><h3>Gobi Desert, Mongolia</h3><p>Overland journeys, guided tours & yurts costly.</p><div class="meta"><i class="fas fa-star"></i> 4.7 • ₹99,000</div><a class="btn" href="booking.html?package=gobi">Book Now</a></div>
+      <div class="card"><img src="images/socotra.jpg"><h3>Socotra, Yemen</h3><p>Extreme offbeat, few flights, tours & camping expensive.</p><div class="meta"><i class="fas fa-star"></i> 4.8 • ₹124,000</div><a class="btn" href="booking.html?package=socotra">Book Now</a></div>
+      <div class="card"><img src="images/sabah.jpg"><h3>Sabah & Sarawak, Malaysia</h3><p>Eco-lodges in remote reserves, expensive access.</p><div class="meta"><i class="fas fa-star"></i> 4.7 • ₹81,000</div><a class="btn" href="booking.html?package=sabah">Book Now</a></div>
+      <div class="card"><img src="images/svaneti.jpg"><h3>Svaneti, Georgia</h3><p>Beautiful Caucasus, poor roads, limited stays.</p><div class="meta"><i class="fas fa-star"></i> 4.5 • ₹73,000</div><a class="btn" href="booking.html?package=svaneti">Book Now</a></div>
+    </div>
+  </section>
+
+  <!-- Europe -->
+  <section class="packages-section" id="europe">
+    <h2><i class="fas fa-globe-europe"></i> 🌍 Europe Packages</h2>
+    <div class="packages-grid">
+      <div class="card"><img src="images/faroe.jpg"><h3>Faroe Islands, Denmark</h3><p>Remote Atlantic isles, flights & hotels expensive.</p><div class="meta"><i class="fas fa-star"></i> 4.9 • ₹124,000</div><a class="btn" href="booking.html?package=faroe">Book Now</a></div>
+      <div class="card"><img src="images/lofoten.jpg"><h3>Lofoten Islands, Norway</h3><p>Difficult access, cabins & hotels costly.</p><div class="meta"><i class="fas fa-star"></i> 4.8 • ₹132,000</div><a class="btn" href="booking.html?package=lofoten">Book Now</a></div>
+      <div class="card"><img src="images/azores.jpg"><h3>Azores, Portugal</h3><p>Flights required, boutique stays expensive.</p><div class="meta"><i class="fas fa-star"></i> 4.7 • ₹91,000</div><a class="btn" href="booking.html?package=azores">Book Now</a></div>
+      <div class="card"><img src="images/transylvania.jpg"><h3>Transylvania, Romania</h3><p>Slow rural transport, boutique hotels pricey.</p><div class="meta"><i class="fas fa-star"></i> 4.6 • ₹74,000</div><a class="btn" href="booking.html?package=transylvania">Book Now</a></div>
+      <div class="card"><img src="images/albanian.jpg"><h3>Albanian Alps</h3><p>Hard trails, limited guesthouses.</p><div class="meta"><i class="fas fa-star"></i> 4.5 • ₹79,000</div><a class="btn" href="booking.html?package=albania">Book Now</a></div>
+      <div class="card"><img src="images/isle.jpg"><h3>Isle of Skye, Scotland</h3><p>Few buses, hotels sell out, costly in summer.</p><div class="meta"><i class="fas fa-star"></i> 4.8 • ₹99,000</div><a class="btn" href="booking.html?package=skye">Book Now</a></div>
+      <div class="card"><img src="images/picos.jpg"><h3>Picos de Europa, Spain</h3><p>Limited transport, boutique stays expensive.</p><div class="meta"><i class="fas fa-star"></i> 4.6 • ₹80,000</div><a class="btn" href="booking.html?package=picos">Book Now</a></div>
+      <div class="card"><img src="images/lapland.jpg"><h3>Lapland, Finland</h3><p>Remote north, igloos & lodges very pricey.</p><div class="meta"><i class="fas fa-star"></i> 4.9 • ₹148,000</div><a class="btn" href="booking.html?package=lapland">Book Now</a></div>
+      <div class="card"><img src="images/kotor.jpg"><h3>Kotor Bay, Montenegro</h3><p>Seasonal demand makes transport & stays costly.</p><div class="meta"><i class="fas fa-star"></i> 4.7 • ₹82,000</div><a class="btn" href="booking.html?package=kotor">Book Now</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 BEYONDCROWDS | “Explore Beyond, Stay Reliable”</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

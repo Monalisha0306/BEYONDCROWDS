@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEYONDCROWDS</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="images/beyondlogo.png" alt="BEYONDCROWDS Logo" class="logo">
+    <h1>BEYONDCROWDS</h1>
+    <p class="tagline">Explore Beyond, Stay Reliable</p>
+  </header>
+
+  <!-- Navigation with Icons -->
+<nav class="icon-nav">
+  <ul>
+    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="flights.html"><i class="fas fa-plane"></i> Flights</a></li>
+    <li><a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+    <li><a href="packages.html"><i class="fas fa-hotel"></i> Packages</a></li>
+    <li><a href="booking.html"><i class="fas fa-clipboard-list"></i> Bookings</a></li>
+    <li><a href="visa-currency.html"><i class="fas fa-passport"></i> Visa & Currency</a></li>
+    <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment</a></li>
+    <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h2>Discover Underrated Destinations 🌍</h2>
+    <p>Reliable transport, affordable stays, and unforgettable experiences.</p>
+    <a href="destinations.html" class="btn">Explore Now</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="featured">
+    <h2>About Us</h2>
+    <p>
+      At <strong>BEYONDCROWDS</strong>, we believe travel is more than sightseeing. 
+      We specialize in underrated destinations that blend adventure, culture, 
+      and comfort—helping you explore the unexplored.
+    </p>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="featured">
+    <h2>🌏 Featured Destinations</h2>
+    <div class="destinations">
+      <div class="card">
+        <img src="images/ladakh.jpg" alt="Ladakh, India">
+        <h3>Ladakh, India</h3>
+        <p>High-altitude, limited road connectivity, costly in peak season.</p>
+        <a href="package.html?place=ladakh" class="btn">View Packages</a>
+      </div>
+      <div class="card">
+        <img src="images/spiti.jpg" alt="Spiti Valley, India">
+        <h3>Spiti Valley, India</h3>
+        <p>Remote, tough roads, limited stays spike prices.</p>
+        <a href="package.html?place=spiti" class="btn">View Packages</a>
+      </div>
+      <div class="card">
+        <img src="images/siargao.jpg" alt="Siargao, Philippines">
+        <h3>Siargao, Philippines</h3>
+        <p>Requires connecting flights, boutique stays cost more.</p>
+        <a href="package.html?place=siargao" class="btn">View Packages</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="destinations.html" class="btn">See All Destinations →</a>
+    </div>
+  </section>
+
+  <!-- Hotels (Part of Packages) -->
+  <section id="hotels" class="featured">
+    <h2>🏨 Handpicked Hotels</h2>
+    <div class="destinations">
+      <div class="card">
+        <img src="images/hotel-1.jpg" alt="Boutique Stay">
+        <h3>Boutique Stays</h3>
+        <p>Cozy, charming stays that give you a local vibe.</p>
+      </div>
+      <div class="card">
+        <img src="images/hotel-2.jpg" alt="Luxury Resort">
+        <h3>Luxury Resorts</h3>
+        <p>Unwind with premium comfort and stunning views.</p>
+      </div>
+      <div class="card">
+        <img src="images/hotel-3.jpg" alt="Eco Lodge">
+        <h3>Eco Lodges</h3>
+        <p>Stay sustainable while staying close to nature.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section id="activities" class="featured">
+    <h2>🎯 Activities</h2>
+    <div class="destinations">
+      <div class="card">
+        <img src="images/activity-1.jpg" alt="Trekking">
+        <h3>Trekking</h3>
+        <p>Guided treks across breathtaking landscapes.</p>
+      </div>
+      <div class="card">
+        <img src="images/activity-2.jpg" alt="Scuba Diving">
+        <h3>Scuba Diving</h3>
+        <p>Explore the vibrant marine life under expert guidance.</p>
+      </div>
+      <div class="card">
+        <img src="images/activity-3.jpg" alt="Cultural Tours">
+        <h3>Cultural Tours</h3>
+        <p>Connect with local traditions and heritage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="featured">
+    <h2>📩 Contact Us</h2>
+    <form class="booking-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email">
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer with Social Media -->
+  <footer>
+    <p>© 2025 BEYONDCROWDS | “Explore Beyond, Stay Reliable”</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
